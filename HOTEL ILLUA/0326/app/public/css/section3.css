@@ -1,0 +1,84 @@
+#wrap #section3 {
+  width: 100%;
+  height: 969px;
+  background-color: #fff;
+}
+#wrap #section3 .container {
+  width: 100%;
+  height: 969px;
+}
+#wrap #section3 .container .gap {
+  width: 100%;
+  display: flex;
+}
+#wrap #section3 .container .gap .content {
+  width: 1369px;
+  height: 969px;
+}
+#wrap #section3 .container .gap .content .slide-container {
+  height: 100%;
+  width: 1369px;
+}
+#wrap #section3 .container .gap .content .slide-container .slide-view {
+  width: 100%;
+  overflow: hidden;
+}
+#wrap #section3 .container .gap .content .slide-container .slide-view .slide-wrap {
+  display: flex;
+  width: 500%;
+}
+#wrap #section3 .container .gap .content .slide-container .slide-view .slide-wrap .slide {
+  width: 100%;
+  height: 100vh;
+  background: url() no-repeat 50% 50%;
+  background-size: cover;
+}
+#wrap #section3 .container .gap .content .slide-container .slide-view .slide-wrap .slide.slide1 {
+  background-image: url(../img/main_rooms_1369x954_01.jpg);
+}
+#wrap #section3 .container .gap .content .slide-container .slide-view .slide-wrap .slide.slide2 {
+  background-image: url(../img/main_rooms_1369x954_02.jpg);
+}
+#wrap #section3 .container .gap .content .slide-container .slide-view .slide-wrap .slide.slide3 {
+  background-image: url(../img/main_rooms_1369x954_03.jpg);
+}
+#wrap #section3 .container .gap .content .slide-container .slide-view .slide-wrap .slide.slide4 {
+  background-image: url(../img/main_rooms_1369x954_04.jpg);
+}
+#wrap #section3 .container .gap .content .slide-container .slide-view .slide-wrap .slide.slide5 {
+  background-image: url(../img/main_rooms_1369x954_05.jpg);
+}
+#wrap #section3 .container .gap .text-box {
+  margin: 350px 0;
+  width: 534px;
+  padding: 0 64px;
+  height: 100%;
+  position: relative;
+}
+#wrap #section3 .container .gap .text-box h2 {
+  font-size: 43px;
+  color: #000;
+  padding-bottom: 25px;
+  line-height: 160%;
+}
+#wrap #section3 .container .gap .text-box p {
+  font-size: 18px;
+  font-weight: 500;
+  padding-bottom: 60px;
+}
+#wrap #section3 .container .gap .text-box ul {
+  display: flex;
+}
+#wrap #section3 .container .gap .text-box ul .tag {
+  padding-bottom: 290px;
+}
+#wrap #section3 .container .gap .text-box ul .tag span {
+  margin: 0 8px 0 0;
+  font-size: 16px;
+  color: #999;
+}
+#wrap #section3 .container .gap .text-box span {
+  cursor: pointer;
+  font-size: 14px;
+  color: #000;
+}

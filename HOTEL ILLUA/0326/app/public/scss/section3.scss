@@ -1,0 +1,79 @@
+#wrap{
+    #section3{
+        width: 100%;
+        height: 969px;
+        background-color: #fff;
+        .container{
+            width: 100%;
+            height: 969px;
+            .gap{
+                width: 100%;
+                display: flex;
+                .content{
+                    width: 1369px;
+                    height: 969px;
+                    .slide-container{
+                        height: 100%;
+                        width: 1369px;
+                        .slide-view{
+                            width: 100%;
+                            overflow: hidden;
+                            .slide-wrap{
+                                display: flex;
+                                width: 100% * 5;
+                                    .slide{
+                                        width: 100%;
+                                        height: 100vh;
+                                        background: url() no-repeat 50% 50%;
+                                        background-size: cover;
+                                        &.slide1{background-image: url(../img/main_rooms_1369x954_01.jpg);}
+                                        &.slide2{background-image: url(../img/main_rooms_1369x954_02.jpg);}
+                                        &.slide3{background-image: url(../img/main_rooms_1369x954_03.jpg);}
+                                        &.slide4{background-image: url(../img/main_rooms_1369x954_04.jpg);}
+                                        &.slide5{background-image: url(../img/main_rooms_1369x954_05.jpg);}
+                                    }
+                            }
+                        }
+                    }
+                }
+                .text-box{
+                    margin: 350px 0 ;
+                    width: 534px;
+                    padding: 0 64px;
+                    height: 100%;
+                    position: relative;
+                    h2{
+                        font-size: 43px;
+                        color: #000;
+                        padding-bottom: 25px;
+                        line-height:160% ;
+                    }
+                    p{
+                        font-size: 18px;
+                        font-weight: 500;
+                        padding-bottom: 60px;
+                    }
+                    ul{
+                       display: flex;
+                        .tag{
+                                padding-bottom: 290px;
+                            span{
+                                margin: 0 8px 0 0;
+                                font-size: 16px;
+                                color: #999;
+                                i{
+                                }
+                            }
+
+                        }
+                    }
+                    span{
+                        cursor: pointer;
+                        font-size: 14px;
+                        color: #000;
+                    }
+                }
+            }
+        }
+    }
+}

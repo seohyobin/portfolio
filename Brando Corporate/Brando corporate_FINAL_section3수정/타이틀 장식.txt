@@ -1,0 +1,25 @@
+  &::before{
+                                content: '';
+                                width: 20px;
+                                height: 2px;
+                                background: #2283d4;
+                                position: absolute;
+                                top: 50%;
+                                left: -40px;
+                                margin: -0.5px 0 0 0;
+                               
+                            }
+                            &::after{
+                                content: '';
+                                width: 20px;
+                                height: 2px;
+                                background: #2283d4;
+                                position: absolute;
+                                top: 50%;
+                                right: -40px;
+                                margin: -0.5px 0 0 0;
+                                
+                            }
+
+
+

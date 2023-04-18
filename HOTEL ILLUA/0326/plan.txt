@@ -1,0 +1,9 @@
+components
+    WrapComponent.jsx
+        wrap 
+            HeaderComponent.jsx
+            MainSection1Component.jsx
+            MainSection2Component.jsx
+            MainSection3Component.jsx
+            MainSection4Component.jsx
+            FooterComponent.jsx
