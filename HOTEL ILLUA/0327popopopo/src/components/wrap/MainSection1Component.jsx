@@ -59,6 +59,7 @@ export default function MainSection1Component({modal,useEffect}){
 };
 MainSection1Component.defaultProps={
     modal:{
-        isMainModal:true
+        isMainModal:false
     }
 };
+    

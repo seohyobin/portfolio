@@ -1,91 +1,82 @@
 import React from 'react';
 import $ from 'jquery';
 
-export default function MainSection3Component({slide,nextCount,prevCount,setId,cnt}){
-    const [state, setState] = React.useState({slide});
-       
-//    React.useEffect(()=>{
-//     const $slide = $('#section3 .slide');  
-//     // const $arrowNextBtn = $('#section3 .arrow-next-btn');  
-//     // const $arrowprevBtn = $('#section3 .arrow-prev-btn');  
-//     let setId= 0;
-//     let cnt=0;
+export default function MainSection3Component(){
+           
+React.useEffect(()=>{
 
-               
-    
+    const $slideContainer = $('#section3 .slide-container');
+    const $slideWrap = $('#section3 .slide-wrap');
+    const $slide = $('#section3 .slide');
+    const $arrowNextBtn = $('#section3 .arrow-next-btn');
+    const $arrowPrevBtn = $('#section3 .arrow-prev-btn');
 
-//     function mainNextSlide(){
-//             $slide.stop().css({zIndex: 1,opacity:1}); 
-//             $slide.eq(cnt===0 ? 4:cnt-1).css({zIndex: 2});//현재슬라이드
-//             $slide.eq(cnt).css({zIndex: 3}).stop().animate({opacity:0},0).animate({opacity:1},2000);//다음슬라이드(페이드인 효과)
-          
+    let cnt=0;
+    let n = $slide.length-2;
+    let setId= 0;
 
-        
-//     }
-//     //1-2.메인 이전 슬라이드함수
-//     function mainPrevSlide (){
-//         $slide.stop().css({zIndex: 1,opacity:1}); 
-//         $slide.eq(cnt).css({zIndex: 2});//이전슬라이드
-//         $slide.eq(cnt===4 ? 0 :cnt+1).css({zIndex: 3}).stop().animate({opacity:1},0).animate({opacity:0},2000);//현재슬라이드
-//     }
+    //1.메인
+    function mainSlide(){
+        $slideWrap.stop().animate({left:`${-100*cnt}%`},600,function(){
+            if(cnt >= n){
+                cnt = 0;
+            }
+            if(cnt< 0){
+                cnt=n-1;
+            }
+            $slideWrap.stop().animate({left:`${-100*cnt}%`},0)
+        })
+    }
 
-//         //2-1.다음(next)카운트함수
-//         function nextCount(){
-//             cnt++;
-//             if(cnt>4){ 
-//                 cnt=0; 
-//             }
-//             mainNextSlide();
-//         }
-//     //2-2.이전(prev)카운트함수
-//     function prevCount(){
-//         cnt--;
-//         if(cnt<0){ //0 미만이면 마지막으로 리턴 초기화 2
-//             cnt=4; 
-//         }
-//         mainPrevSlide();
-//     }
+    //2.다음
+    function nextCount(){
+        cnt++;
+        mainSlide();
+    }
 
-//     //3.자동타이머함수
-//         function autoTimer(){
-//             setId= setInterval(prevCount,3000); // 3초 후 이전 카운트 함수 호출
-//         }
+    //3.이전 
+    function prevCount(){
+        cnt--;
+        mainSlide();
+    }
 
-//         autoTimer();
-  
-
-//    })
-
-    //페이지 다음 슬라이드 버튼
-    const onClickNextSlide=(e)=>{
-        let isNextSlideBtn=false;
-     e.preventDefault();
-     if(setId){
-        nextCount();
+    //4.자동
+    function autoTimer(){
         clearInterval(setId);
-        isNextSlideBtn=true;
-   
-     }
-        setState({
-            ...state,
-            isNextSlideBtn:isNextSlideBtn
-        })
+        setId = setInterval(nextCount,3000);
+    }
+    autoTimer();
 
-    }
-    const onClickPrevSlide=(e)=>{
-        let isPrevSlideBtn=false;
-        e.preventDefault();
-        if(setId){
-            prevCount();
+    //마우스 엔터 오버
+
+    $slideContainer.on({
+        mouseenter(){
             clearInterval(setId);
-            isPrevSlideBtn=true;
         }
-        setState({
-            ...state,
-            isPrevSlideBtn:isPrevSlideBtn
-        })
-        
-    }
+    })
+    $slideContainer.on({
+        mouseleave(){
+            autoTimer();
+
+        }
+    })
+
+    //5.다음페이지버튼
+    $arrowNextBtn.on({
+        click(e){
+            e.preventDefault();
+            nextCount();
+        }
+    })
+
+    //6.이전페이지버튼
+    $arrowPrevBtn.on({
+        click(e){
+            e.preventDefault();
+            prevCount();
+        }
+    })
+})
     return (
         <section id='section3'>
           <div className="container">
@@ -94,18 +85,20 @@ export default function MainSection3Component({slide,nextCount,prevCount,setId,c
                     <div className="slide-container">
                         <div className="slide-view">
                             <ul className="slide-wrap">
-                                <li className='slide'><img src="../img/main_rooms_1369x954_01.jpg" alt="" /></li>
-                                <li className='slide'><img src="../img/main_rooms_1369x954_02.jpg" alt="" /></li>
-                                <li className='slide'><img src="../img/main_rooms_1369x954_03.jpg" alt="" /></li>
-                                <li className='slide'><img src="../img/main_rooms_1369x954_04.jpg" alt="" /></li>
-                                <li className='slide'><img src="../img/main_rooms_1369x954_05.jpg" alt="" /></li>
+                                <li className='slide slide4'><img src="../img/main_rooms_1369x954_05.jpg" alt="" /></li>
+                                <li className='slide slide0'><img src="../img/main_rooms_1369x954_01.jpg" alt="" /></li>
+                                <li className='slide slide1'><img src="../img/main_rooms_1369x954_02.jpg" alt="" /></li>
+                                <li className='slide slide2'><img src="../img/main_rooms_1369x954_03.jpg" alt="" /></li>
+                                <li className='slide slide3'><img src="../img/main_rooms_1369x954_04.jpg" alt="" /></li>
+                                <li className='slide slide4'><img src="../img/main_rooms_1369x954_05.jpg" alt="" /></li>
+                                <li className='slide slide0'><img src="../img/main_rooms_1369x954_01.jpg" alt="" /></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 {/* <!-- 좌우화살버튼 --> */}
-                <a href="!#" class="arrow-next-btn" onClick={onClickNextSlide}><i></i></a>
-                <a href="!#" class="arrow-prev-btn" onClick={onClickPrevSlide}><i></i></a>
+                <a href="!#" class="arrow-next-btn"><i></i></a>
+                <a href="!#" class="arrow-prev-btn"><i></i></a>
                 <div className="text-box">
                     <h2>HEALING <br />IN THE PLACE</h2>
                     <p>편안한 휴식이 있는 공간</p>
@@ -122,12 +115,5 @@ export default function MainSection3Component({slide,nextCount,prevCount,setId,c
         </section>
     );
 };
-MainSection3Component.dafaultProps={
-    slide:{
-        isNextSlideBtn:false,
-        isPrevSlideBtn:false,
-    }
-    //슬라이드 버튼 
 
-}
 
